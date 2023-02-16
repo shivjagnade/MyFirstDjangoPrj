@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <h1> Welcome to Network Utility</h1>
+
+    <form method="POST" action="output">
+        {% csrf_token %}
+        <p>Enter IP Address:</p>
+        <input type="text" name="ipadd" />
+        <p>Enter Commands you want to run separated by Comma:</p>
+        <textarea name="cmds" rows="25" cols="50" ></textarea><br>
+        <input type="submit" value="Connect"/>
+    </form>
+</html>

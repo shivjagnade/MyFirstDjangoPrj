@@ -1,0 +1,26 @@
+<style>
+    h3{text-align: center;}
+    </style>
+{% if user.is_authenticated %}
+<p><h3 text-align="right"><a href="logout">Logout</a></h3></p>
+{% else %}
+<p><h3 text-align="right"><a href="login">Login or Sign Up!</a></h3></p>
+{% endif %}
+
+<p><h3 text-align="left"><a href="nconnect">Network Utility</a></h3></p>
+<p><h3 text-align="left"><a href="myapp1/test">MyApp1 Test</a></h3></p>
+<p><h3 text-align="left"><a href="myapp2/test1">MyApp2 Test</a></h3></p>
+
+<form method="POST" action="counter">
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+    <h1> Welcome, {{user.username}} </h1>
+    {% else %}
+    <h1> Welcome, Guest </h1>
+    {% endif %}
+    <h2>
+        Enter Your Text Here!
+    </h2>
+    <textarea name="text" rows="25" cols="100"></textarea><br>
+    <input type="submit"/>
+</form>
